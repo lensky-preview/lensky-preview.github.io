@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  topicstarter</title>
+  <style> 
+*{
+  margin:0;
+  padding:0;
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+}
+ul{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  position: fixed;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  top:0;
+  background:lightblue;
+  width:100%;
+  height:40px;
+}
+li{
+  margin-left:10px;
+  list-style:none;
+}
+a{
+  font-size:1.4em;
+  text-decoration:none;
+}
+.item{
+  width:100vw;
+  height:500px;
+  margin-top:40px;
+  padding-top:60px;
+}
+#item1{
+background:red;  
+}
+#item2{
+background:green;  
+}
+#item3{
+background:blue;  
+}
+a:hover{
+  color:yellow;
+}
+</style>
+</head>
+
+<body>
+  <ul>
+  <li><a href="page.html#section3">другая страница секция 3</a></li>
+  <li><a href="#item1">секция 1 на этой странице</a></li>
+  <li><a href="#item2">секция 2 на этой странице</a></li>
+  <li><a href="#item3">секция 3 на этой странице</a></li>
+</ul>
+
+<div id="item1" class="item">15</div>
+<div id="item2" class="item">25</div>
+<div id="item3" class="item">35</div>
+
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script> 
+    $(document).ready(function(){
+      $("ul").on("click","a", function () {
+        var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 500);
+      });
+    });
+
+    var myHash = location.hash; 
+    location.hash = ''; 
+    if(myHash[1] != undefined){ 
+        $('html, body').animate({scrollTop: $(myHash).offset().top}, 500); 
+    };
+  </script>
+</body>
+
+</html>
