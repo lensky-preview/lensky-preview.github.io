@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style> 
+		*{
+		margin:0;
+		padding:0;
+		-webkit-box-sizing:border-box;
+		      box-sizing:border-box;
+		}
+		ul{
+			display:flex;
+			position: fixed;top:0;width:100%;height:50px;align-items: center;background:#fff;
+		}
+		li{
+			margin-left:10px;
+			list-style-type: none;
+		}
+		a{
+			font-size:1.3em;
+			text-decoration: none;
+		}
+		a:hover{
+			color:red;
+		}
+		.item{
+			width:100vw;
+			height:500px;
+		}
+		#section1{
+		 background:red;
+		}
+		#section2{
+		 background:green;
+		}
+		#section3{
+		 background:blue;  	
+		}
+	</style>
+
+</head>
+<body>
+	  <ul>
+  <li><a href="index.html#item1">index.html item1</a></li>
+  <li><a href="#section1">секция 1 на этой странице</a></li>
+  <li><a href="#section2">секция 2 на этой странице</a></li>
+  <li><a href="#section3">секция 3 на этой странице</a></li>
+</ul>
+	<div id="section1" class="item">
+		Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Подпоясал на берегу своих предупреждал страна злых напоивший свое живет, жаренные всеми оксмокс. Единственное не свое коварных вскоре, залетают толку даже запятой семантика за, раз текстов щеке взобравшись своих языкового всеми там наш города? Жизни предложения деревни жаренные над ты, напоивший!
+	</div>
+	<div id="section2" class="item">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quos nam dicta iusto, odio quidem, ad culpa ullam nemo odit vitae soluta facere aut optio ipsam maiores fuga aliquam accusantium autem, obcaecati perferendis quae rerum laudantium, molestias nesciunt? Voluptates, quisquam minima, voluptas laborum aperiam nam! Impedit, nam laboriosam facere amet!
+	</div>
+	<div id="section3" class="item">
+		Mujer uno dolor más de, poder mismo si. Paria modo permacultura amanecer repugnante dolor alma triste preferencia almácigo décima belleza ataque namibia laudo culpa encefalograma marejada analfabeto, falda pan. Accesorio débito casi sed demonio yugo, modo, propósito! Natividad triste dulce, menos fugacidad números, y apéndice décima lejos abogada, alma asunción.
+	</div>
+
+
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script> 
+	  $(document).ready(function(){
+	    $("ul").on("click","a", function () {
+	      var id  = $(this).attr('href'),
+	        top = $(id).offset().top;
+	      $('body,html').animate({scrollTop: top}, 500);
+	    });
+	  });
+
+		var myHash = location.hash; 
+		location.hash = ''; 
+		if(myHash[1] != undefined){ 
+		    $('html, body').animate({scrollTop: $(myHash).offset().top}, 500); 
+		};
+	</script>
+
+</body>
+</html>
